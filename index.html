@@ -22,48 +22,63 @@
     .badge-tech { background:#20c997; }
     footer { color:#6c757d; font-size:.9rem; padding: 24px 0; }
     .badges img { margin: 4px; }
-    .btn-disabled {
-      pointer-events: none;
-      background-color: #adb5bd;
-      border: none;
-      color: white;
-    }
+    .btn-disabled { pointer-events: none; background-color: #adb5bd; border: none; color: white; }
+    .lang-switch { position: absolute; top: 15px; right: 20px; }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar position-relative">
     <div class="container">
       <a class="brand" href="/">
         <img src="/logo_arasmu.svg" alt="Logo ARASMU" />
         <span>ARASMU</span>
       </a>
+      <!-- Selector d’idioma -->
+      <div class="lang-switch">
+        <button class="btn btn-sm btn-light me-1" onclick="setLang('ca')">CA</button>
+        <button class="btn btn-sm btn-light me-1" onclick="setLang('es')">ES</button>
+        <button class="btn btn-sm btn-light" onclick="setLang('en')">EN</button>
+      </div>
     </div>
   </nav>
 
   <!-- Contenidor principal -->
   <main class="container container-narrow">
     <section class="hero">
-      <h1 class="mb-3">Benvingut/da a la meva pàgina personal</h1>
-      <p class="lead text-muted mb-0">
-        Projectes tècnics, apps i automatitzacions orientades a dades, backend i desplegament.
-      </p>
+      <h1 class="mb-3" 
+          data-ca="Benvingut/da a la meva pàgina personal"
+          data-es="Bienvenido/a a mi página personal"
+          data-en="Welcome to my personal page"></h1>
+
+      <p class="lead text-muted mb-0"
+         data-ca="Projectes tècnics, apps i automatitzacions orientades a dades, backend i desplegament."
+         data-es="Proyectos técnicos, apps y automatizaciones orientadas a datos, backend y despliegue."
+         data-en="Technical projects, apps and automations focused on data, backend and deployment."></p>
     </section>
 
     <!-- Projectes -->
     <section aria-labelledby="projects-title">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 id="projects-title" class="h4 mb-0">Projectes destacats</h2>
-        <span class="badge badge-tech rounded-pill text-dark">Nou</span>
+        <h2 id="projects-title" class="h4 mb-0"
+            data-ca="Projectes destacats"
+            data-es="Proyectos destacados"
+            data-en="Featured projects"></h2>
+        <span class="badge badge-tech rounded-pill text-dark">New</span>
       </div>
 
       <!-- Targeta: Ecodisseny -->
       <div class="card card-hover mb-4">
         <div class="card-body">
-          <h3 class="h5 mb-3">🏗️ Ecodisseny - Sistema de Gestió de Projectes</h3>
-          <p class="text-muted mb-3">
-            Gestió de pressupostos amb models relacionats, AJAX/JS, generació de PDFs i disseny responsive.
-          </p>
+          <h3 class="h5 mb-3"
+              data-ca="🏗️ Ecodisseny - Sistema de Gestió de Projectes"
+              data-es="🏗️ Ecodisseny - Sistema de Gestión de Proyectos"
+              data-en="🏗️ Ecodisseny - Project Management System"></h3>
+
+          <p class="text-muted mb-3"
+             data-ca="Gestió de pressupostos amb models relacionats, AJAX/JS, generació de PDFs i disseny responsive."
+             data-es="Gestión de presupuestos con modelos relacionados, AJAX/JS, generación de PDFs y diseño responsive."
+             data-en="Budget management with related models, AJAX/JS, PDF generation and responsive design."></p>
 
           <!-- Badges -->
           <div class="badges text-center mb-3">
@@ -75,24 +90,41 @@
 
           <!-- Botó desactivat -->
           <div class="text-center">
-            <button class="btn btn-disabled">Pròximament</button>
+            <button class="btn btn-disabled"
+                    data-ca="Pròximament"
+                    data-es="Próximamente"
+                    data-en="Coming soon"></button>
           </div>
         </div>
       </div>
 
-      <!-- Placeholder per a futurs projectes -->
-      <div class="text-center text-muted small">
-        Aviat afegiré més projectes (Dash, ETL, pipelines, etc.).
+      <!-- Placeholder -->
+      <div class="text-center text-muted small"
+           data-ca="Aviat afegiré més projectes (Dash, ETL, pipelines, etc.)."
+           data-es="Pronto añadiré más proyectos (Dash, ETL, pipelines, etc.)."
+           data-en="More projects coming soon (Dash, ETL, pipelines, etc.).">
       </div>
     </section>
   </main>
 
   <footer class="container container-narrow text-center">
-    © <span id="y"></span> Arasmu · Contacte: <a href="mailto:contact@arasmu.net">contact@arasmu.net</a>
+    © <span id="y"></span> Arasmu · 
+    <span data-ca="Contacte" data-es="Contacto" data-en="Contact"></span>: 
+    <a href="mailto:contact@arasmu.net">contact@arasmu.net</a>
   </footer>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    function setLang(lang) {
+      document.querySelectorAll("[data-ca]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+      });
+      localStorage.setItem("lang", lang);
+    }
+    // Idioma per defecte o guardat
+    const saved = localStorage.getItem("lang") || "ca";
+    setLang(saved);
   </script>
 </body>
 </html>
