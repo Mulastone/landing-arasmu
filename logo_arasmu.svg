@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg">
-  <!-- Ícono: hexágono + barras (datos/automation) -->
-  <g transform="translate(0,2)">
-    <polygon points="16,0 30,8 30,24 16,32 2,24 2,8" fill="#20c997"/>
-    <rect x="9" y="18" width="3" height="8" rx="1" fill="#0f5132"/>
-    <rect x="14" y="14" width="3" height="12" rx="1" fill="#0f5132"/>
-    <rect x="19" y="10" width="3" height="16" rx="1" fill="#0f5132"/>
-  </g>
-
-  <!-- Logotipo: ARASMU -->
-  <g transform="translate(40,28)">
-    <text x="0" y="0" font-family="Montserrat, Poppins, 'Segoe UI', Arial, sans-serif"
-          font-size="24" font-weight="700" fill="#212529" letter-spacing="2">
-      ARASMU
-    </text>
-  </g>
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexágono gris -->
+  <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#6c757d"/>
+  <!-- Barras internas -->
+  <rect x="13" y="22" width="3" height="10" rx="1" fill="#343a40"/>
+  <rect x="18" y="16" width="3" height="16" rx="1" fill="#343a40"/>
+  <rect x="23" y="10" width="3" height="22" rx="1" fill="#343a40"/>
 </svg>
