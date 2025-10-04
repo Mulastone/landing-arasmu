@@ -20,10 +20,13 @@
     .card-hover { transition: transform .15s ease, box-shadow .15s ease; }
     .card-hover:hover { transform: translateY(-2px); box-shadow: 0 0.5rem 1rem rgba(0,0,0,.07); }
     .badge-tech { background:#20c997; }
+    .badge-featured { background:#ff6b35; color: white; }
     footer { color:#6c757d; font-size:.9rem; padding: 24px 0; }
     .badges img { margin: 4px; }
     .btn-disabled { pointer-events: none; background-color: #adb5bd; border: none; color: white; }
     .lang-switch { position: absolute; top: 15px; right: 20px; }
+    .project-stats { font-size: 0.85rem; color: #6c757d; margin-bottom: 1rem; }
+    .project-stats .stat { display: inline-block; margin-right: 1rem; }
   </style>
 </head>
 <body>
@@ -34,7 +37,7 @@
         <img src="/logo_arasmu.svg" alt="Logo ARASMU" />
         
       </a>
-      <!-- Selector d’idioma -->
+      <!-- Selector d'idioma -->
       <div class="lang-switch">
         <button class="btn btn-sm btn-light me-1" onclick="setLang('ca')">CA</button>
         <button class="btn btn-sm btn-light me-1" onclick="setLang('es')">ES</button>
@@ -64,7 +67,52 @@
             data-ca="Projectes destacats"
             data-es="Proyectos destacados"
             data-en="Featured projects"></h2>
-        <span class="badge badge-tech rounded-pill text-dark">New</span>
+        <span class="badge badge-tech rounded-pill text-dark">Active</span>
+      </div>
+
+      <!-- Targeta: Dashboard Propiedades Andorra -->
+      <div class="card card-hover mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h3 class="h5 mb-0"
+                data-ca="🏠 Dashboard Propiedades Andorra"
+                data-es="🏠 Dashboard Propiedades Andorra"
+                data-en="🏠 Andorra Properties Dashboard"></h3>
+            <span class="badge badge-featured rounded-pill">Featured</span>
+          </div>
+
+          <p class="text-muted mb-2"
+             data-ca="Sistema automatitzat de scraping i dashboard per propietats immobiliàries d'Andorra. Filtrat intel·ligent, sistema de vigència i interfície interactiva."
+             data-es="Sistema automatizado de scraping y dashboard para propiedades inmobiliarias de Andorra. Filtrado inteligente, sistema de vigencia e interfaz interactiva."
+             data-en="Automated scraping system and dashboard for Andorra real estate properties. Smart filtering, validity system and interactive interface."></p>
+
+          <!-- Estadístiques del projecte -->
+          <div class="project-stats">
+            <span class="stat">📊 339 propiedades activas</span>
+            <span class="stat">🕷️ 4 scrapers optimizados</span>
+            <span class="stat">⚡ Sistema automatizado</span>
+            <span class="stat">🔄 Vigencia 3 días</span>
+          </div>
+
+          <!-- Badges -->
+          <div class="badges text-center mb-3">
+            <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/>
+            <img src="https://img.shields.io/badge/PostgreSQL-15-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+            <img src="https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+            <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+            <img src="https://img.shields.io/badge/Nginx-SSL-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx"/>
+          </div>
+
+          <!-- Botó actiu -->
+          <div class="text-center">
+            <a href="https://pisos.arasmu.net" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+               data-ca="Veure Dashboard"
+               data-es="Ver Dashboard"
+               data-en="View Dashboard">
+              🏠 Dashboard Live
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Targeta: Ecodisseny -->
@@ -75,10 +123,18 @@
               data-es="🏗️ Ecodisseny - Sistema de Gestión de Proyectos"
               data-en="🏗️ Ecodisseny - Project Management System"></h3>
 
-          <p class="text-muted mb-3"
+          <p class="text-muted mb-2"
              data-ca="Gestió de pressupostos amb models relacionats, AJAX/JS, generació de PDFs i disseny responsive."
              data-es="Gestión de presupuestos con modelos relacionados, AJAX/JS, generación de PDFs y diseño responsive."
              data-en="Budget management with related models, AJAX/JS, PDF generation and responsive design."></p>
+
+          <!-- Estadístiques del projecte -->
+          <div class="project-stats">
+            <span class="stat">📋 Gestión completa presupuestos</span>
+            <span class="stat">🎨 UI/UX responsive</span>
+            <span class="stat">📄 Generación PDFs</span>
+            <span class="stat">⚡ AJAX real-time</span>
+          </div>
 
           <!-- Badges -->
           <div class="badges text-center mb-3">
@@ -88,29 +144,37 @@
             <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
           </div>
 
-          <!-- Botó desactivat -->
+          <!-- Botó actiu -->
           <div class="text-center">
-							<a href="https://app.arasmu.net" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
- 							  data-ca="Accedeix a l'app"
-						   data-es="Accede a la app"
-						   data-en="Open app">
-							  App Ecodisseny
-							</a>
+            <a href="https://app.arasmu.net" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+               data-ca="Accedeix a l'app"
+               data-es="Accede a la app"
+               data-en="Open app">
+              🏗️ App Ecodisseny
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Placeholder -->
-      <div class="text-center text-muted small"
-           data-ca="Aviat afegiré més projectes (Dash, ETL, pipelines, etc.)."
-           data-es="Pronto añadiré más proyectos (Dash, ETL, pipelines, etc.)."
-           data-en="More projects coming soon (Dash, ETL, pipelines, etc.).">
+      <!-- Información adicional -->
+      <div class="card card-hover border-light bg-light">
+        <div class="card-body text-center">
+          <h4 class="h6 mb-2"
+              data-ca="🚀 Més projectes en desenvolupament"
+              data-es="🚀 Más proyectos en desarrollo"
+              data-en="🚀 More projects in development"></h4>
+          <p class="text-muted small mb-0"
+             data-ca="ETL pipelines, APIs REST, automatitzacions amb IA, dashboards analítics i més..."
+             data-es="ETL pipelines, APIs REST, automatizaciones con IA, dashboards analíticos y más..."
+             data-en="ETL pipelines, REST APIs, AI automations, analytics dashboards and more...">
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="container container-narrow text-center">
-    © <span id="y"></span> Arasmu · 
+    © <span id="y"></span> Axel Rasmussen (Arasmu) · 
     <span data-ca="Contacte" data-es="Contacto" data-en="Contact"></span>: 
     <a href="mailto:contact@arasmu.net">contact@arasmu.net</a>
   </footer>
